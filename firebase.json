@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/RapportStageApp",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

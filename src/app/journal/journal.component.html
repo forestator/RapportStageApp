@@ -1,0 +1,38 @@
+<ng-container *ngFor="let post of listePosts">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h2>{{post.intitule}}</h2></mat-card-title>
+      <mat-card-subtitle>Rubrique : {{post.rubrique}}</mat-card-subtitle>
+      <mat-card-subtitle>{{post.date}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <ul>
+        <p *ngIf="post.competenceUtilisees != null">Compétences utilisées :</p>
+        <li *ngFor="let comp of post.competenceUtilisees">
+          <p *ngIf="comp != ''">{{comp}}</p>
+        </li>
+      </ul>
+      <p *ngIf="post.description != ''">Description de la tâche :</p>
+      <p *ngIf="post.description != ''"> {{post.description}} </p>
+      <p *ngIf="post.problemesRencontres != ''"> Problèmes rencontrés : </p>
+      <p *ngIf="post.problemesRencontres != ''"> {{post.problemesRencontres}} </p>
+      <p *ngIf="post.moyensDeResolution != ''"> Méthodes de résolution : </p>
+      <p *ngIf="post.moyensDeResolution != ''"> {{post.moyensDeResolution}} </p>
+      <p *ngIf="post.commentaires != ''"> Commentaires généraux : </p>
+      <p *ngIf="post.commentaires != ''"> {{post.commentaires}} </p>
+      <p *ngIf="post.fichiers != null" >Liste des fichiers associés :</p>
+      <ng-container *ngFor="let fichier of post.fichiers">
+        <ul *ngIf="fichier != null">
+          <li>
+            {{fichier}}
+          </li>
+        </ul>
+
+      </ng-container>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="onEdit(post)">EDIT</button>
+      <button mat-raised-button (click)="openDialog(post)">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>

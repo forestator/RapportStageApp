@@ -1,0 +1,145 @@
+<div class="example-container" [formGroup]="postForm">
+  <mat-form-field>
+    <mat-select placeholder="Rubrique" formControlName="rubrique">
+      <mat-option value="Réalisation">Réalisation</mat-option>
+      <mat-option value="Gestion de projet">
+        Gestion de projet
+      </mat-option>
+      <mat-option value="présentation de l’entreprise">
+        Présentation de l’entreprise
+      </mat-option>
+      <mat-option value="Spécifications techniques">Spécifications techniques</mat-option>
+      <mat-option value=" Spécifications fonctionnelles"> Spécifications fonctionnelles</mat-option>
+      <mat-option value="Cahier des charges ou expression des besoins de l'application à développer">
+        Cahier des charges ou expression des besoins de l'application à développer
+      </mat-option>
+      <mat-option value="Résumé du projet en anglais (abstract) d’une longueur d’au moins 200 mots">
+        Résumé du projet en anglais (abstract) d’une longueur d’au moins 200 mots
+      </mat-option>
+      <mat-option value=" Liste des compétences du référentiel qui sont couvertes par le projet">
+        Liste des compétences du référentiel qui sont couvertes par le projet
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-checkbox formControlName="comp1">
+    Développer des composants d'interface
+  </mat-checkbox>
+  <ul>
+    <li>
+      <mat-checkbox formControlName="comp2">
+        Maquetter une application
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp3">
+        Développer une interface utilisateur
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp4">
+        Développer des composants d’accès aux données
+      </mat-checkbox>
+    </li>
+  </ul>
+  <mat-checkbox formControlName="comp5">
+    Développer la persistance des données
+  </mat-checkbox>
+  <ul>
+    <li>
+      <mat-checkbox formControlName="comp11">
+        Concevoir une base de données
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp12">
+        Mettre en place une base de données
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp13">
+        Développer des composants dans le langage d’une
+        base de données
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp6">
+        Utiliser l’anglais dans son activité professionnelle en Informatique
+      </mat-checkbox>
+    </li>
+  </ul>
+  <mat-checkbox formControlName="comp7">
+    Développer une application n-tiers
+  </mat-checkbox>
+  <ul>
+    <li>
+      <mat-checkbox formControlName="comp8">
+        Concevoir une application
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp9">
+        Développer des composants métier
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp10">
+        Construire une application organisée en couches
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp14">
+        Collaborer à la gestion d'un projet informatique
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp15">
+        Développer une application de mobilité numérique
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp16">
+        Préparer et exécuter les plans de tests d’une application
+      </mat-checkbox>
+    </li>
+    <li>
+      <mat-checkbox formControlName="comp17">
+        Préparer et exécuter le déploiement d’une application
+      </mat-checkbox>
+    </li>
+  </ul>
+  <mat-form-field>
+    <input matInput placeholder="Intitulé / Sujet" formControlName="intitule">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Description" formControlName="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Description des problèmes rencontrés"
+              formControlName="problemesRencontres"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Description des méthodes de résolution"
+              formControlName="moyensDeResolution"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Commentaires généraux" formControlName="commentaires"></textarea>
+  </mat-form-field>
+<h3>Attention pour le moment : un fichier sélectionner = un fichier upload !</h3>
+  <label>Captures d'écran :</label>
+  <input type="file" class="mat-button" (change)="upload($event)" accept=".png,.jpg"/>
+  <input type="file" class="mat-button" (change)="upload($event)" accept=".png,.jpg"/>
+  <input type="file" class="mat-button" (change)="upload($event)" accept=".png,.jpg"/>
+
+  <label>Fichiers (code / texte) :</label>
+  <input type="file" class="mat-button" (change)="upload($event)"/>
+  <input type="file" class="mat-button" (change)="upload($event)"/>
+  <input type="file" class="mat-button" (change)="upload($event)"/>
+
+  <button mat-button (click)="onSavePost()">Valider</button>
+
+</div>
