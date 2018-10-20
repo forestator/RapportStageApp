@@ -21,94 +21,13 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+  
+  <ul>Liste des compétences : (non éditable :' )
+    <li *ngFor="let comp of postToEdit.competenceUtilisees">
+      {{comp}}
+    </li>
+  </ul>
 
-
-  <mat-checkbox formControlName="comp1">
-    Développer des composants d'interface
-  </mat-checkbox>
-  <ul>
-    <li>
-      <mat-checkbox formControlName="comp2">
-        Maquetter une application
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp3">
-        Développer une interface utilisateur
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp4">
-        Développer des composants d’accès aux données
-      </mat-checkbox>
-    </li>
-  </ul>
-  <mat-checkbox formControlName="comp5">
-    Développer la persistance des données
-  </mat-checkbox>
-  <ul>
-    <li>
-      <mat-checkbox formControlName="comp11">
-        Concevoir une base de données
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp12">
-        Mettre en place une base de données
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp13">
-        Développer des composants dans le langage d’une
-        base de données
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp6">
-        Utiliser l’anglais dans son activité professionnelle en Informatique
-      </mat-checkbox>
-    </li>
-  </ul>
-  <mat-checkbox formControlName="comp7">
-    Développer une application n-tiers
-  </mat-checkbox>
-  <ul>
-    <li>
-      <mat-checkbox formControlName="comp8">
-        Concevoir une application
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp9">
-        Développer des composants métier
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp10">
-        Construire une application organisée en couches
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp14">
-        Collaborer à la gestion d'un projet informatique
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp15">
-        Développer une application de mobilité numérique
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp16">
-        Préparer et exécuter les plans de tests d’une application
-      </mat-checkbox>
-    </li>
-    <li>
-      <mat-checkbox formControlName="comp17">
-        Préparer et exécuter le déploiement d’une application
-      </mat-checkbox>
-    </li>
-  </ul>
   <mat-form-field>
     <input matInput placeholder="Intitulé / Sujet" formControlName="intitule">
   </mat-form-field>
@@ -118,11 +37,13 @@
   </mat-form-field>
 
   <mat-form-field>
-    <textarea matInput placeholder="Description des problèmes rencontrés" formControlName="problemesRencontres"></textarea>
+    <textarea matInput placeholder="Description des problèmes rencontrés"
+              formControlName="problemesRencontres"></textarea>
   </mat-form-field>
 
   <mat-form-field>
-    <textarea matInput placeholder="Description des méthodes de résolution" formControlName="moyensDeResolution"></textarea>
+    <textarea matInput placeholder="Description des méthodes de résolution"
+              formControlName="moyensDeResolution"></textarea>
   </mat-form-field>
 
   <mat-form-field>

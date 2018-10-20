@@ -30,23 +30,6 @@ export class EditPostComponent implements OnInit {
   private initForm() {
     this.postForm = this.formBuilder.group({
       rubrique: [this.postToEdit.rubrique, Validators.required],
-      comp1: [''],
-      comp2: [''],
-      comp3: [''],
-      comp4: [''],
-      comp5: [''],
-      comp6: [''],
-      comp7: [''],
-      comp8: [''],
-      comp9: [''],
-      comp10: [''],
-      comp11: [''],
-      comp12: [''],
-      comp13: [''],
-      comp14: [''],
-      comp15: [''],
-      comp16: [''],
-      comp17: [''],
       intitule: [this.postToEdit.intitule, Validators.required],
       description: [this.postToEdit.description, Validators.required],
       problemesRencontres: [this.postToEdit.problemesRencontres],
@@ -57,26 +40,18 @@ export class EditPostComponent implements OnInit {
 
   onSavePost() {
     const rubrique = this.postForm.get('rubrique').value;
-    this.getCompétencesUtilisees();
-    const competenceUtilisees = this.competences;
+//    this.getCompétencesUtilisees();
+//    const competenceUtilisees = this.competences;
     const intitule = this.postForm.get('intitule').value;
     const description = this.postForm.get('description').value;
     const problemesRencontres = this.postForm.get('problemesRencontres').value;
     const moyensDeResolution = this.postForm.get('moyensDeResolution').value;
     const commentaires = this.postForm.get('commentaires').value;
     const fichiers = [];
-    const newPost = new DailyUpdate(new Date().toJSON(), rubrique, competenceUtilisees, intitule,
+    const editPost = new DailyUpdate(new Date().toJSON(), rubrique, this.postToEdit.competenceUtilisees, intitule,
       description, problemesRencontres, moyensDeResolution, commentaires, fichiers);
-    this.postService.createNewPost(newPost);
+    this.postService.editPost(editPost);
     this.router.navigate(['/journal']);
-    /*
-        console.log('rubrique:' + rubrique);
-        console.log('intitule:' + intitule);
-        console.log('description:' + description);
-        console.log('problemesRencontres:' + problemesRencontres);
-        console.log('moyensDeResolution:' + moyensDeResolution);
-        console.log('commentaires:' + commentaires);
-    */
   }
 
   getCompétencesUtilisees() {
@@ -121,11 +96,5 @@ export class EditPostComponent implements OnInit {
     if (comp10) {
       this.competences.push('Construire une application organisée en couches');
     }
-    /*
-        //test
-        for (let entry of this.competences) {
-          console.log('compétences :' + entry);
-        }
-      */
   }
 }

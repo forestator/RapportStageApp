@@ -41,19 +41,18 @@ export class JournalService {
     this.emitPosts();
   }
 
-  //TODO
-  editStats(newPost: DailyUpdate) {/*
-    const statIndexToUpdate = this.listePosts.findIndex(
+  editPost(editPost: DailyUpdate) {
+    const postIndexToUpdate = this.listePosts.findIndex(
       (postToUpdate) => {
-        if (postToUpdate.classeName === statsToEdit.classeName && postToUpdate.specName === statsToEdit.specName) {
+        if (postToUpdate.rubrique === editPost.rubrique && postToUpdate.intitule === editPost.intitule) {
           return true;
         }
       }
     );
-    this.listePosts[statIndexToUpdate] = statsToEdit;
+    this.listePosts[postIndexToUpdate] = editPost;
     this.savePosts();
     this.emitPosts();
-    */
+
   }
 
   removePost(postToRemove: DailyUpdate) {
